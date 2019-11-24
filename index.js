@@ -256,7 +256,7 @@ bot.on('message', message => {
         message.channel.send(embed).then(c => c.react("✅"));
         addlog("Suppression d'un avertissement", `${message.author}, vient d'enlever un avertissement à \`${member.user.username}\``);
     }
-    /*
+    
     if (command === "dm") {
         console.log(`Commande **${command}** appelée`);
         if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.sendCode("", `Erreur : Vous n'avez pas de droits administrateurs, vous ne pouvez donc pas utiliser les commandes liées à l'administration.`);
@@ -283,7 +283,7 @@ bot.on('message', message => {
             .setColor(color_primary);
             member.send(embed);
         }
-    }*/
+    }
 });
 
 // connection du bot
