@@ -74,7 +74,7 @@ bot.on('message', message => {
         let embed = new Discord.RichEmbed()
         .setTitle(`:question: | Voici les différentes commandes`)
         .addField(":pick: | Utilitaire", `\`-help, -server-info, -user-info, -bot-info\``)
-        .addField(":no_entry: | Administration", `\`-reset-xp, -set-logs, -del-logs, -warn, -unwarn, -warn-list, -set-join-msg, -del-join-msg, -set-leave-msg, -del-leave-msg, -mp, -set-autorole, -del-autorole, -kick, -ban\``)
+        .addField(":no_entry: | Administration", `\`-reset-xp, -set-logs, -del-logs, -warn, -unwarn, -warn-list, -set-join-msg, -del-join-msg, -set-leave-msg, -del-leave-msg, -dm, -set-autorole, -del-autorole, -kick, -ban\``)
         .addField(":chart_with_upwards_trend: | Système de niveau", `\`-rank, -leaderboard\``)
         .addField(":video_game: | Amusement", `\`-roll, -8ball, -ascii, -rip\``)
         .setColor(color_primary)
