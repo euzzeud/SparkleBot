@@ -1,6 +1,7 @@
 // dénition des variables globales
 
 const Discord = require('discord.js');
+const ascii = require("ascii-art");
 const bot = new Discord.Client();
 const config = require('./config.json');
 var prefix = config.prefix;
@@ -213,7 +214,7 @@ bot.on('message', message => {
 
     if (command === "warn") {
         console.log(`Commande **${command}** appelée`);
-        if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.sendCode("", `Erreur : Vous n'avez pas de droits administrateurs, vous ne pouvez donc pas utiliser les commandes liées à l'administration.`);
+        if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.sendCode("", `Erreur : Vous n'avez pas de droits administrateurs, vous ne pouvez donc pas utiliser les commandes liées à l'administration.`);
         let member = message.mentions.members.first();
         if (member.user.id === message.author.id) return message.channel.sendCode('', `Erreur : Vous ne pouvez pas vous avertir.`)
         if (!member) return message.channel.sendCode("", `Erreur : Merci de mentionner un utilisateur.`);
@@ -241,7 +242,7 @@ bot.on('message', message => {
 
     if (command === "unwarn") {
         console.log(`Commande **${command}** appelée`);
-        if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.sendCode("", `Erreur : Vous n'avez pas de droits administrateurs, vous ne pouvez donc pas utiliser les commandes liées à l'administration.`);
+        if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.sendCode("", `Erreur : Vous n'avez pas de droits administrateurs, vous ne pouvez donc pas utiliser les commandes liées à l'administration.`);
         let member = message.mentions.members.first();
         if (member.user.id === message.author.id) return message.channel.sendCode('', "Erreur : Vous ne pouvez pas vous enlever un avertissement.")
         if (!member) return message.channel.sendCode("", `Erreur : Merci de mentionner le membre auquel enlever un avertissement.`);
@@ -294,7 +295,7 @@ bot.on('message', message => {
     }
     if (command === "kick") {
         console.log(`Commande **${command}** appelée`);
-        if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.sendCode("", `Erreur : Vous n'avez pas de droits administrateurs, vous ne pouvez donc pas utiliser les commandes liées à l'administration.`);
+        if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.sendCode("", `Erreur : Vous n'avez pas de droits administrateurs, vous ne pouvez donc pas utiliser les commandes liées à l'administration.`);
         let member = message.mentions.members.first();
 
         if (message.mentions.users.size === 0) {
@@ -351,16 +352,13 @@ var reponses_question = [
 let reponse = (reponses_question[Math.floor(Math.random() * reponses_question.length)])
 var resume = new Discord.RichEmbed()
 .setAuthor(message.author.tag, message.author.displayAvatarURL)
-.setTitle("Résultat du 🎱 8ball !")
+.setTitle("Résultat du 8ball !")
 .setFooter(`Requête envoyée par ${message.author.tag}`, message.author.displayAvatarURL)
 .setDescription("Voici ma réponse à votre question.")
 .addField("Question", tte)
 .addField("Réponse", reponse)
 message.channel.send(resume)
 }
-
-
-
 
 
 
