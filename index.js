@@ -351,7 +351,7 @@ var reponses_question = [
 let reponse = (reponses_question[Math.floor(Math.random() * reponses_question.length)])
 var resume = new Discord.RichEmbed()
 .setAuthor(message.author.tag, message.author.displayAvatarURL)
-.setTitle("Résultat du 🎱 8ball !")
+.setTitle("Résultat du 8ball !")
 .setFooter(`Requête envoyée par ${message.author.tag}`, message.author.displayAvatarURL)
 .setDescription("Voici ma réponse à votre question.")
 .addField("Question", tte)
